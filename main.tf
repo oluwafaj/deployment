@@ -148,3 +148,8 @@ import {
   to = azurerm_network_interface.vm_nic[4]
   id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/networkInterfaces/depl-vm-nic-5"
 }
+
+import {
+  to = azurerm_resource_group.main
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg"
+}
