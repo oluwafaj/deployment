@@ -1,0 +1,45 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.3",
+  "serial": 1,
+  "lineage": "d5f49173-6dc0-4910-5e80-127772cb0115",
+  "outputs": {
+    "resource_group_name": {
+      "value": "deployment-rg",
+      "type": "string"
+    },
+    "storage_account_name": {
+      "value": null,
+      "type": "string"
+    },
+    "virtual_machine_name": {
+      "value": null,
+      "type": "dynamic"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg",
+            "location": "eastus",
+            "managed_by": "",
+            "name": "deployment-rg",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIwIn0="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

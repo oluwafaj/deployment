@@ -80,3 +80,71 @@ resource "azurerm_virtual_machine" "main" {
   tags = var.tags
 }
 
+# Import the Network
+import {
+  to = azurerm_virtual_network.main
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/virtualNetworks/deployment-vnet"
+}
+
+# Import the Storage Account (The one you want to change to GRS)
+import {
+  to = azurerm_storage_account.main
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Storage/storageAccounts/deploymentstorage1993"
+}
+
+# Import the VMs (Example for VM 1)
+import {
+  to = azurerm_virtual_machine.main[0]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Compute/virtualMachines/depl-vm-1"
+}
+
+import {
+  to = azurerm_virtual_machine.main[1]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Compute/virtualMachines/depl-vm-2"
+}
+
+import {
+  to = azurerm_virtual_machine.main[2]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Compute/virtualMachines/depl-vm-3"
+}
+
+import {
+  to = azurerm_virtual_machine.main[3]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Compute/virtualMachines/depl-vm-4"
+}
+import {
+  to = azurerm_virtual_machine.main[4]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Compute/virtualMachines/depl-vm-5"
+}
+
+# Import the Subnet (This fixes the 1 to add)
+import {
+  to = azurerm_subnet.main
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/virtualNetworks/deployment-vnet/subnets/deployment-subnet"
+}
+
+# Import the 5 NICs (This fixes the 5 to add)
+import {
+  to = azurerm_network_interface.vm_nic[0]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/networkInterfaces/depl-vm-nic-1"
+}
+
+import {
+  to = azurerm_network_interface.vm_nic[1]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/networkInterfaces/depl-vm-nic-2"
+}
+
+import {
+  to = azurerm_network_interface.vm_nic[2]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/networkInterfaces/depl-vm-nic-3"
+}
+
+import {
+  to = azurerm_network_interface.vm_nic[3]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/networkInterfaces/depl-vm-nic-4"
+}
+
+import {
+  to = azurerm_network_interface.vm_nic[4]
+  id = "/subscriptions/6a012649-9e7f-4cec-b5d7-d4adee64fbbf/resourceGroups/deployment-rg/providers/Microsoft.Network/networkInterfaces/depl-vm-nic-5"
+}
